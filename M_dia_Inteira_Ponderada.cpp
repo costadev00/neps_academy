@@ -21,10 +21,10 @@ typedef long double ld;
 int main()
 {
     fastio;
-    map<char, int> mp;
-    mp[48]++;
-    mp[48]++;
-    cout << mp[48];
-    cout << mp['0'];
+    int a, b;
+    cin >> a >> b;
+    a *= 4;
+    b *= 6;
+    cout << (a + b) / 10 << endl;
     return 0;
 }

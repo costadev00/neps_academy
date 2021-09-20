@@ -21,10 +21,16 @@ typedef long double ld;
 int main()
 {
     fastio;
-    map<char, int> mp;
-    mp[48]++;
-    mp[48]++;
-    cout << mp[48];
-    cout << mp['0'];
+    int n, x;
+    vi vet;
+    while (cin >> n)
+    {
+        while (n--)
+        {
+            cin >> x;
+            vet.pb(x);
+        }
+        cout << accumulate(vet.begin(), vet.end(), 0) << endl;
+    }
     return 0;
 }

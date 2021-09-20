@@ -20,11 +20,28 @@ typedef long double ld;
 
 int main()
 {
-    fastio;
-    map<char, int> mp;
-    mp[48]++;
-    mp[48]++;
-    cout << mp[48];
-    cout << mp['0'];
+    int x;
+    vi vet;
+    cin >> x;
+    vet.pb(x);
+    cin >> x;
+    vet.pb(x);
+    cin >> x;
+    vet.pb(x);
+    vi vet2;
+    vi vetord;
+    vet2 = vet;
+    sort(vet.begin(), vet.end());
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            if (vet[i] == vet2[j])
+                vetord.pb(j + 1);
+        }
+    }
+    for (auto i : vetord)
+        cout << i << endl;
+
     return 0;
 }

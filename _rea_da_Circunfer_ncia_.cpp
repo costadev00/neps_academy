@@ -21,10 +21,9 @@ typedef long double ld;
 int main()
 {
     fastio;
-    map<char, int> mp;
-    mp[48]++;
-    mp[48]++;
-    cout << mp[48];
-    cout << mp['0'];
+    double pi = 3.1416;
+    double r;
+    cin >> r;
+    printf("%.2lf\n", pi * r * r);
     return 0;
 }

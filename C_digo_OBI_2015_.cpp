@@ -21,10 +21,31 @@ typedef long double ld;
 int main()
 {
     fastio;
-    map<char, int> mp;
-    mp[48]++;
-    mp[48]++;
-    cout << mp[48];
-    cout << mp['0'];
+    int n, cont = 0;
+    cin >> n;
+    char c;
+    int vet[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> vet[i];
+    }
+    for (int i = 0; i < n; i++)
+    {
+        if (vet[i] == 1)
+        {
+            if (i + 2 < n)
+            {
+
+                if (vet[i + 1] == 0)
+                {
+                    if (vet[i + 2] == 0)
+                    {
+                        cont++;
+                    }
+                }
+            }
+        }
+    }
+    cout << cont << endl;
     return 0;
 }

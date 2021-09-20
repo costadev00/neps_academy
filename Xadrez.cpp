@@ -21,10 +21,28 @@ typedef long double ld;
 int main()
 {
     fastio;
-    map<char, int> mp;
-    mp[48]++;
-    mp[48]++;
-    cout << mp[48];
-    cout << mp['0'];
+    int aux1 = 1, aux2 = 1;
+    int l, c;
+    cin >> l >> c;
+    int mat[l][c];
+    for (int i = 0; i < l; i++)
+    {
+        aux2 = aux1;
+        if (aux1 == 0)
+            aux1 = 1;
+        else
+            aux1 = 0;
+
+        for (int j = 0; j < c; j++)
+        {
+            mat[i][j] = aux2;
+            if (aux2 == 0)
+                aux2 = 1;
+            else
+                aux2 = 0;
+        }
+    }
+
+    cout << mat[l - 1][c - 1] << endl;
     return 0;
 }

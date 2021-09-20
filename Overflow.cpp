@@ -21,10 +21,21 @@ typedef long double ld;
 int main()
 {
     fastio;
-    map<char, int> mp;
-    mp[48]++;
-    mp[48]++;
-    cout << mp[48];
-    cout << mp['0'];
+    int n, p, q;
+    char c;
+    while (cin >> n)
+    {
+
+        int res = 0;
+        cin >> p >> c >> q;
+        if (c == '+')
+            res = p + q;
+        else
+            res = p * q;
+        if (res > n)
+            cout << "OVERFLOW\n";
+        else
+            cout << "OK\n";
+    }
     return 0;
 }

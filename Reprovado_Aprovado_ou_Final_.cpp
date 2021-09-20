@@ -21,10 +21,17 @@ typedef long double ld;
 int main()
 {
     fastio;
-    map<char, int> mp;
-    mp[48]++;
-    mp[48]++;
-    cout << mp[48];
-    cout << mp['0'];
+    double n1, n2;
+    cin >> n1 >> n2;
+    n1 *= 2;
+    n2 *= 3;
+    double mf = (n1 + n2) / 5;
+    if (mf < 3)
+        cout << "Reprovado\n";
+    else if (mf >= 7)
+        cout << "Aprovado\n";
+    else
+        cout << "Final\n";
+
     return 0;
 }

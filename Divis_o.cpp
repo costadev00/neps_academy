@@ -20,11 +20,8 @@ typedef long double ld;
 
 int main()
 {
-    fastio;
-    map<char, int> mp;
-    mp[48]++;
-    mp[48]++;
-    cout << mp[48];
-    cout << mp['0'];
+    float a, b;
+    cin >> a >> b;
+    printf("%.2f\n", a / b);
     return 0;
 }

@@ -21,10 +21,17 @@ typedef long double ld;
 int main()
 {
     fastio;
-    map<char, int> mp;
-    mp[48]++;
-    mp[48]++;
-    cout << mp[48];
-    cout << mp['0'];
+    int x, y;
+    cin >> x >> y;
+    if (x > 0 && y > 0)
+        cout << "Q1\n";
+    else if (x < 0 && y > 0)
+        cout << "Q2\n";
+    else if (x < 0 && y < 0)
+        cout << "Q3\n";
+    else if (x > 0 && y < 0)
+        cout << "Q4\n";
+    else
+        cout << "eixos\n";
     return 0;
 }

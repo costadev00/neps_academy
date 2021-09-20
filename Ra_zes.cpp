@@ -20,11 +20,13 @@ typedef long double ld;
 
 int main()
 {
-    fastio;
-    map<char, int> mp;
-    mp[48]++;
-    mp[48]++;
-    cout << mp[48];
-    cout << mp['0'];
+    int n;
+    float x;
+    cin >> n;
+    while (n--)
+    {
+        cin >> x;
+        printf("%.4f\n", sqrt(x));
+    }
     return 0;
 }
