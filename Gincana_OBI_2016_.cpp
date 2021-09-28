@@ -24,12 +24,19 @@ int gcd(int a, int b)
         return b;
     return gcd(b % a, a);
 }
-
 int main()
 {
     fastio;
-    int a, b;
-    cin >> a >> b;
-    cout << gcd(a, b);
+    unsigned long long int n, m;
+    unsigned long long int i = 1;
+    cin >> n >> m;
+    for (i = m; i > 1; i--)
+    {
+        if (gcd(n, i) == 1)
+        {
+            break;
+        }
+    }
+    cout << i << endl;
     return 0;
 }

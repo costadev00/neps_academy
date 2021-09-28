@@ -18,18 +18,22 @@ typedef long double ld;
 #define read(st) getline(cin, st)
 #define FOR(i, a, b) for (int i = a; i < b; i++)
 
-int gcd(int a, int b)
-{
-    if (a == 0)
-        return b;
-    return gcd(b % a, a);
-}
-
 int main()
 {
     fastio;
-    int a, b;
-    cin >> a >> b;
-    cout << gcd(a, b);
+    vi vet1;
+    int n, x;
+    cin >> n;
+    FOR(i, 0, n)
+    {
+        cin >> x;
+        vet1.pb(x);
+    }
+    vi vet2(vet1);
+    sort(vet2.begin(), vet2.end());
+    if (vet1 == vet2)
+        cout << "Notas validas\n";
+    else
+        cout << "Notas invalidas\n";
     return 0;
 }

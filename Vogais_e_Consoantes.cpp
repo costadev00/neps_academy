@@ -18,18 +18,24 @@ typedef long double ld;
 #define read(st) getline(cin, st)
 #define FOR(i, a, b) for (int i = a; i < b; i++)
 
-int gcd(int a, int b)
-{
-    if (a == 0)
-        return b;
-    return gcd(b % a, a);
-}
-
 int main()
 {
     fastio;
-    int a, b;
-    cin >> a >> b;
-    cout << gcd(a, b);
+    string s, vetvo, vetco;
+    cin >> s;
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u')
+            vetvo.push_back(s[i]);
+        else
+            vetco.pb(s[i]);
+    }
+    cout << "Vogais: ";
+    for (auto i : vetvo)
+        cout << i;
+    cout << endl;
+    cout << "Consoantes: ";
+    for (auto i : vetco)
+        cout << i;
     return 0;
 }

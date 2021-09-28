@@ -18,18 +18,28 @@ typedef long double ld;
 #define read(st) getline(cin, st)
 #define FOR(i, a, b) for (int i = a; i < b; i++)
 
+vector<int> vet;
+
 int gcd(int a, int b)
 {
     if (a == 0)
         return b;
     return gcd(b % a, a);
 }
-
 int main()
 {
-    fastio;
-    int a, b;
-    cin >> a >> b;
-    cout << gcd(a, b);
-    return 0;
+    int n, x;
+    cin >> n;
+    while (n--)
+    {
+        cin >> x;
+        vet.push_back(x);
+    }
+    int aux = vet[0];
+
+    for (int i = 0; i < vet.size() - 1; i++)
+    {
+        aux = gcd(aux, vet[i + 1]);
+    }
+    cout << aux << endl;
 }

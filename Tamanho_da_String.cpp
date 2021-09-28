@@ -18,18 +18,11 @@ typedef long double ld;
 #define read(st) getline(cin, st)
 #define FOR(i, a, b) for (int i = a; i < b; i++)
 
-int gcd(int a, int b)
-{
-    if (a == 0)
-        return b;
-    return gcd(b % a, a);
-}
-
 int main()
 {
     fastio;
-    int a, b;
-    cin >> a >> b;
-    cout << gcd(a, b);
+    string s;
+    cin >> s;
+    cout << s.length() << endl;
     return 0;
 }
