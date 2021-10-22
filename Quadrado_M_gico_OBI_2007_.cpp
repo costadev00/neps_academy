@@ -21,28 +21,103 @@ typedef long double ld;
 int main()
 {
     fastio;
-    int n, x;
+    int n;
+    int soma = 0;
+    int aux = 0;
     cin >> n;
-    vector<vector<int>> vet;
-    vi aux;
+    int mat[n][n];
+    FOR(i, 0, n)
+    {
+        FOR(j, 0, n)
+        {
+            cin >> mat[i][j];
+        }
+    }
+    bool flag = true;
+    soma = 0;
+    // verifica linha
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
         {
-            cin >> x;
-            aux.pb(x);
+            soma += mat[i][j];
         }
-        vet.pb(aux);
-        aux.clear();
+
+        if (flag)
+        {
+            aux = soma;
+            soma = 0;
+            flag = false;
+            continue;
+        }
+        if (soma != aux)
+        {
+            cout << -1 << endl;
+            return 0;
+        }
+        // cout << soma << endl;
+        soma = 0;
     }
-    int aux = 0, soma = 0;
+
+    flag = true;
+    soma = 0;
+    // verifica coluna
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
         {
-            soma += vet[i][j];
+            soma += mat[j][i];
         }
-        aux = soma;
+        if (flag)
+        {
+            aux = soma;
+            soma = 0;
+            flag = false;
+            continue;
+        }
+        if (soma != aux)
+        {
+            cout << -1 << endl;
+            return 0;
+        }
+        // cout << soma << endl;
+        soma = 0;
     }
+
+    flag = true;
+    soma = 0;
+    // verifica diagonal 1
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (i == j)
+                soma += mat[i][j];
+        }
+    }
+    if (soma != aux)
+    {
+        cout << -1 << endl;
+        return 0;
+    }
+    // cout << soma << endl;
+
+    // verifica diagonal 2
+    int j = n - 1;
+    flag = true;
+    soma = 0;
+
+    for (int i = 0; i < n; i++)
+    {
+        soma += mat[i][j];
+        j--;
+    }
+    if (soma != aux)
+    {
+        cout << -1 << endl;
+        return 0;
+    }
+    else
+        cout << soma << endl;
     return 0;
 }

@@ -2,6 +2,9 @@
     "files.associations": {
         "ostream": "cpp",
         "iostream": "cpp",
-        "random": "cpp"
-    }
+        "random": "cpp",
+        "forward_list": "cpp",
+        "vector": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
