@@ -21,20 +21,23 @@ typedef long double ld;
 int main()
 {
     fastio;
-    priority_queue<pair<int, string>> p;
-    p.push(make_pair(15, "massa"));
-    p.push(make_pair(25, "alonso"));
-    p.push(make_pair(150, "hamilton"));
-    p.push(make_pair(15000, "senna"));
-    p.push(make_pair(12, "legreng"));
+    int n;
+    string nome1, nome2, s;
+    cin >> nome1 >> nome2;
+    cin >> n;
+    cin.ignore();
+    cin >> s;
 
-    pair<int, string> top;
-    while (!p.empty())
+    if (nome1 != "Reluew" || nome2 != "Markinhos")
     {
-        top = p.top();
-        cout << top.second << endl;
-        p.pop();
+        cout << "Nao eh possivel descriptografar!\n";
+        return 0;
     }
-
+    int tam = s.length();
+    for (int i = 0; i < tam; i++)
+    {
+        s[i] = s[i] + n;
+    }
+    cout << s << endl;
     return 0;
 }

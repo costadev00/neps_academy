@@ -1,3 +1,4 @@
+// TODO : SOLVE
 #include <bits/stdc++.h>
 #define fastio                        \
     ios_base::sync_with_stdio(false); \
@@ -21,20 +22,19 @@ typedef long double ld;
 int main()
 {
     fastio;
-    priority_queue<pair<int, string>> p;
-    p.push(make_pair(15, "massa"));
-    p.push(make_pair(25, "alonso"));
-    p.push(make_pair(150, "hamilton"));
-    p.push(make_pair(15000, "senna"));
-    p.push(make_pair(12, "legreng"));
-
-    pair<int, string> top;
-    while (!p.empty())
+    queue<int> q;
+    int c, n, t, d, x;
+    int minatual = 0, cont = 0;
+    cin >> c >> n;
+    while (n--)
     {
-        top = p.top();
-        cout << top.second << endl;
-        p.pop();
+        cin >> t >> d;
+        q.push(t);
+        if (!q.empty() && minatual - q.front() > 20)
+            cont++;
+        q.pop();
+        minatual += d;
     }
-
+    cout << cont;
     return 0;
 }

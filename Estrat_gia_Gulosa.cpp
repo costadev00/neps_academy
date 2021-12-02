@@ -9,7 +9,7 @@ typedef long long ll;
 typedef long double ld;
 
 #define endl "\n"
-#define debug(args...) cout << (#args) << " = " << (args) << endl
+#define debug(args...)
 #define MOD 1000000007
 #define vi vector<int>
 #define fl forward_list
@@ -21,20 +21,25 @@ typedef long double ld;
 int main()
 {
     fastio;
-    priority_queue<pair<int, string>> p;
-    p.push(make_pair(15, "massa"));
-    p.push(make_pair(25, "alonso"));
-    p.push(make_pair(150, "hamilton"));
-    p.push(make_pair(15000, "senna"));
-    p.push(make_pair(12, "legreng"));
-
-    pair<int, string> top;
-    while (!p.empty())
+    vi S{1, 5, 10, 25, 50, 100};
+    int v;
+    while (cin >> v)
     {
-        top = p.top();
-        cout << top.second << endl;
-        p.pop();
+        int coins = 0;
+        for (int i = 5; i >= 0; i--)
+        {
+            while (v >= S[i])
+            {
+                // if (v < S[i])
+                // break;
+                debug(S[i]);
+                debug(coins);
+                debug(v);
+                coins++;
+                v -= S[i];
+            }
+        }
+        cout << coins << endl;
     }
-
     return 0;
 }

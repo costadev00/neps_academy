@@ -21,20 +21,16 @@ typedef long double ld;
 int main()
 {
     fastio;
-    priority_queue<pair<int, string>> p;
-    p.push(make_pair(15, "massa"));
-    p.push(make_pair(25, "alonso"));
-    p.push(make_pair(150, "hamilton"));
-    p.push(make_pair(15000, "senna"));
-    p.push(make_pair(12, "legreng"));
-
-    pair<int, string> top;
-    while (!p.empty())
+    int n, x;
+    set<int> s;
+    while (cin >> n)
     {
-        top = p.top();
-        cout << top.second << endl;
-        p.pop();
+        while (n--)
+        {
+            cin >> x;
+            s.insert(x);
+        }
+        cout << s.size();
     }
-
     return 0;
 }
