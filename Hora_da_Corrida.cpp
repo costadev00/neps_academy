@@ -27,7 +27,11 @@ int main()
     for (int i = 1; i <= 9; i += 1)
     {
         double res = (double)(tot * i) / 10;
-        cout << (int)ceil(res) << " ";
+        if (i + 1 == 10)
+            cout << (int)ceil(res);
+        else
+            cout << (int)ceil(res) << " ";
     }
+    cout << endl;
     return 0;
 }

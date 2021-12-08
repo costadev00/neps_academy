@@ -1,4 +1,3 @@
-// TODO : SOLVE
 #include <bits/stdc++.h>
 #define fastio                        \
     ios_base::sync_with_stdio(false); \
@@ -22,26 +21,10 @@ typedef long double ld;
 int main()
 {
     fastio;
-    queue<int> q;
-    int c, n, t, d, x;
-    vector<pair<int, int>> pessoa;
-    int minatual = 0, cont = 0;
-
-    cin >> c >> n;
-    for (int i = 0; i < n; i++)
-    {
-        cin >> t >> d;
-        pessoa[i].first = t;
-        pessoa[i].second = d;
-
-        q.push(pessoa[i].second);
-        cout << pessoa[i].second << endl;
-    }
-
-    for (int i = 0; i < q.size(); i++)
-    {
-        cout << q.front() << endl;
-        q.pop();
-    }
+    int b1, h1, b2, h2, a1, a2;
+    cin >> b1 >> h1 >> b2 >> h2;
+    a1 = b1 * h1;
+    a2 = b2 * h2;
+    cout << max(a1, a2);
     return 0;
 }

@@ -44,7 +44,8 @@
         "xloctime": "cpp",
         "xmemory0": "cpp",
         "xutility": "cpp",
-        "xxatomic": "cpp"
+        "xxatomic": "cpp",
+        "xiosbase": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
