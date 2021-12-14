@@ -45,7 +45,8 @@
         "xmemory0": "cpp",
         "xutility": "cpp",
         "xxatomic": "cpp",
-        "xiosbase": "cpp"
+        "xiosbase": "cpp",
+        "cstdlib": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

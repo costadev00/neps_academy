@@ -21,13 +21,21 @@ typedef long double ld;
 int main()
 {
     fastio;
-    int c, a, cont = 0;
-    cin >> c >> a;
-    int ans = a / (c - 1);
-
-    int resto = a % (c - 1);
-    if (resto > 0)
-        ans++;
-    cout << ans << endl;
+    int n, x;
+    vi vet;
+    cin >> n;
+    FOR(i, 0, n)
+    {
+        cin >> x;
+        vet.pb(x);
+    }
+    int maior = 0;
+    int num = 0;
+    for (int i = 0; i < n-1; i++)
+    {
+        num = (vet[i] | vet[i + 1]);
+        maior = maior | num;
+    }
+    cout << maior << endl;
     return 0;
 }

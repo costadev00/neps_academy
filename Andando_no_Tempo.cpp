@@ -21,13 +21,18 @@ typedef long double ld;
 int main()
 {
     fastio;
-    int c, a, cont = 0;
-    cin >> c >> a;
-    int ans = a / (c - 1);
-
-    int resto = a % (c - 1);
-    if (resto > 0)
-        ans++;
-    cout << ans << endl;
+    int a, b, c;
+    cin >> a >> b >> c;
+    int soma = a + b + c;
+    if ((a + b) == c)
+        cout << "S\n";
+    else if ((a + c) == b)
+        cout << "S\n";
+    else if ((b + c) == a)
+        cout << "S\n";
+    else if (a == b || a == c || b == a || b == c)
+        cout << "S\n";
+    else
+        cout << "N\n";
     return 0;
 }
