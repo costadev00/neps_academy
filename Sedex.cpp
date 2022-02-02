@@ -9,26 +9,23 @@ typedef long long ll;
 typedef long double ld;
 
 #define endl "\n"
-#define debug(args...) cout << (#args) << " = " << (args) << endl
+#define debug(args...) printf(args)
 #define MOD 1000000007
 #define vi vector<int>
-#define fl forward_list
 #define pb push_back
-#define pf push_front
 #define read(st) getline(cin, st)
 #define FOR(i, a, b) for (int i = a; i < b; i++)
 
 int main()
 {
-    int l, ld;
-    char ini, dest;
-    bool val = true;
-    cin >> ini >> l >> dest >> ld;
-
-    if ((abs(ini - dest) == 2 && abs(l - ld) == 1) || (abs(ini - dest) == 1 && abs(l - ld) == 2))
-        val = false;
-
-    val ? cout << "INVALIDO\n" : cout << "VALIDO\n";
-
+    fastio;
+    int n, a, l, p;
+    cin >> n;
+    cin >> a >> l >> p;
+    int op = a * l * p;
+    if (n <= a && n <= l && n <= p)
+        cout << "S\n";
+    else
+        cout << "N\n";
     return 0;
 }

@@ -20,15 +20,16 @@ typedef long double ld;
 
 int main()
 {
-    int l, ld;
-    char ini, dest;
-    bool val = true;
-    cin >> ini >> l >> dest >> ld;
-
-    if ((abs(ini - dest) == 2 && abs(l - ld) == 1) || (abs(ini - dest) == 1 && abs(l - ld) == 2))
-        val = false;
-
-    val ? cout << "INVALIDO\n" : cout << "VALIDO\n";
-
+    fastio;
+    int a, b, c, h, l;
+    while (cin >> a >> b >> c >> h >> l)
+    {
+        int c1 = 2 * ((a * b) + (a * c) + (b * c));
+        int c2 = h * l;
+        if (c1 <= h && c1 <= l)
+            cout << "S\n";
+        else
+            cout << "N\n";
+    }
     return 0;
 }

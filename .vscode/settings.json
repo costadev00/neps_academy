@@ -46,7 +46,17 @@
         "xutility": "cpp",
         "xxatomic": "cpp",
         "xiosbase": "cpp",
-        "cstdlib": "cpp"
+        "cstdlib": "cpp",
+        "*.tcc": "cpp",
+        "optional": "cpp",
+        "future": "cpp",
+        "iosfwd": "cpp",
+        "ranges": "cpp",
+        "stdexcept": "cpp",
+        "system_error": "cpp",
+        "tuple": "cpp",
+        "any": "cpp",
+        "span": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }

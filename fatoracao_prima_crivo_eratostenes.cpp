@@ -34,4 +34,5 @@ int main()
 
     for (int i = 1; i < (int)primes.size(); i++)
         cout << "*" << primes[i];
+        
 }

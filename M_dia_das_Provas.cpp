@@ -1,7 +1,4 @@
 #include <bits/stdc++.h>
-#define fastio                        \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(NULL)
 
 using namespace std;
 
@@ -18,17 +15,18 @@ typedef long double ld;
 #define read(st) getline(cin, st)
 #define FOR(i, a, b) for (int i = a; i < b; i++)
 
+struct Prova
+{
+    int nota, peso;
+};
+
 int main()
 {
-    int l, ld;
-    char ini, dest;
-    bool val = true;
-    cin >> ini >> l >> dest >> ld;
+    Prova A, B, C;
+    scanf("%d %d", &A.nota, &A.peso);
+    scanf("%d %d", &B.nota, &B.peso);
+    scanf("%d %d", &C.nota, &C.peso);
 
-    if ((abs(ini - dest) == 2 && abs(l - ld) == 1) || (abs(ini - dest) == 1 && abs(l - ld) == 2))
-        val = false;
-
-    val ? cout << "INVALIDO\n" : cout << "VALIDO\n";
-
+    printf("%d\n", ((A.nota * A.peso) + (B.nota * B.peso) + (C.nota * C.peso)) / (A.peso + B.peso + C.peso));
     return 0;
 }
