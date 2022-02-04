@@ -21,8 +21,13 @@ typedef long double ld;
 int main()
 {
     fastio;
-    char a = '2';
-    int b = a - '0';
-    cout << b + 1;
+    int n;
+    while (cin >> n)
+    {
+        int soma = 0;
+        for (int i = 0; i <= n; i++)
+            soma += i;
+        cout << soma << endl;
+    }
     return 0;
 }
