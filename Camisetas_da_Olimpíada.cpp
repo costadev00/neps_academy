@@ -22,9 +22,23 @@ int main()
 {
     fastio;
     int n;
+    int pq = 0, gd = 0;
+    int p, g;
     cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    int x;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> x;
+        if (x == 1)
+            pq++;
+        else
+            gd++;
+    }
+    cin >> p >> g;
+    if (p == pq && gd == g)
+        cout << "S\n";
+    else
+        cout << "N\n";
+
     return 0;
 }

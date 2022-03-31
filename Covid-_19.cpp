@@ -21,10 +21,13 @@ typedef long double ld;
 int main()
 {
     fastio;
-    int n;
-    cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    int novos_casos, novas_hosp;
+    cin >> novos_casos >> novas_hosp;
+    if (novas_hosp >= 30)
+        cout << "Red\n";
+    else if (novos_casos <= 50 && novas_hosp <= 10)
+        cout << "White\n";
+    else
+        cout << "Yellow\n";
     return 0;
 }

@@ -21,10 +21,13 @@ typedef long double ld;
 int main()
 {
     fastio;
-    int n;
-    cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    int A, B, C;
+    cin >> A >> B >> C;
+    if ((B - A) < (C - B))
+        cout << 1 << endl;
+    else if ((B - A) > (C - B))
+        cout << -1 << endl;
+    else
+        cout << 0 << endl;
     return 0;
 }

@@ -21,49 +21,22 @@ typedef long double ld;
 int main()
 {
     fastio;
-    double n;
+    int n;
     cin >> n;
-    int cont = 0, cont1 = 0, cont050 = 0, cont025 = 0, cont010 = 0, cont005 = 0,cont001=0;
-    n /= 100;
-    // cout<<n<<endl;
-    while (n >= 0.0)
+    int moedas[] = {100, 50, 25, 10, 5, 1};
+    int ans[6];
+    int tot = 0;
+    for (int i = 0; i < 6; i++)
     {
-        while (n >= 1)
-        {
-            n -= 1;
-            cont1++;
-        }
-        while (n >= 0.50)
-        {
-            n -= 0.50;
-            cont050++;
-        }
-        while (n >= 0.25)
-        {
-            n -= 0.25;
-            cont025++;
-        }
-        while (n >= 0.10)
-        {
-            n -= 0.10;
-            cont010++;
-        }
-        while (n >= 0.05)
-        {
-            n -= 0.05;
-            cont005++;
-        }
-        while(n>=0.01){
-            n-=0.01;
-            cont001++;
-        }
+        ans[i] = n / moedas[i];
+        n -= ans[i] * moedas[i];
+        tot += ans[i];
     }
-    cout << cont << endl;
-    cout << cont1 << endl;
-    cout << cont050 << endl;
-    cout << cont025 << endl;
-    cout << cont010 << endl;
-    cout << cont005 << endl;
-    cout << cont001 << endl;
+    cout << tot << endl;
+    for (int i = 0; i < 6; i++)
+    {
+        cout << ans[i] << endl;
+    }
+
     return 0;
 }

@@ -23,8 +23,20 @@ int main()
     fastio;
     int n;
     cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    if (n == 1){
+        cout << 1 << endl;
+        return 0;
+    }
+    vi vet;
+    vet.push_back(1);
+    vet.push_back(1);
+    for (int i = 2; i < n; i++)
+    {
+        vet.push_back(vet[i - 1] + vet[i - 2]);
+    }
+    reverse(vet.begin(), vet.end());
+    for (auto u : vet)
+        cout << u << " ";
+    cout<<endl;
     return 0;
 }

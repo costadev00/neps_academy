@@ -23,8 +23,9 @@ int main()
     fastio;
     int n;
     cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    while (n--)
+    {
+        cout << "Pneu\n";
+    }
     return 0;
 }

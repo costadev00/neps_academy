@@ -21,8 +21,10 @@ typedef long double ld;
 int main()
 {
     fastio;
-    char a = '2';
-    int b = a - '0';
-    cout << b + 1;
+    char a = 'f';
+    char b = 'i';
+    int c = 2;
+    char s = (b - a)*c + 'a';
+    cout << s;
     return 0;
 }

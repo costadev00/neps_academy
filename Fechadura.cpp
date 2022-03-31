@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 #define fastio                        \
     ios_base::sync_with_stdio(false); \
@@ -21,10 +22,26 @@ typedef long double ld;
 int main()
 {
     fastio;
-    int n;
-    cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    int n, m;
+    cin >> n >> m;
+    int x;
+    vector<int> vet;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> x;
+        vet.pb(x);
+    }
+    int res = 0;
+    for (int i = 0; i < n - 1; i++)
+    {
+        int dif = abs(vet[i] - m);
+
+        if (vet[i] < m)
+            vet[i + 1] += dif;
+        else
+            vet[i + 1] -= dif;
+        res += dif;
+    }
+    cout << res << endl;
     return 0;
 }

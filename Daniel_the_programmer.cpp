@@ -23,8 +23,11 @@ int main()
     fastio;
     int n;
     cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    int acm = n;
+    for (int i = n - 1; i >= 0; i--)
+    {
+        acm += i;
+    }
+    cout << acm << endl;
     return 0;
 }

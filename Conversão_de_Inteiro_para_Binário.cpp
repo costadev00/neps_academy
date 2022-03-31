@@ -1,35 +1,36 @@
-//TODO: SOLVE
-#include <bits/stdc++.h>
-#define fastio                        \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(NULL)
-
+#include <iostream>
+#include <stack>
 using namespace std;
-
-typedef long long ll;
-typedef long double ld;
-
-#define endl "\n"
-#define debug(args...) cout << (#args) << " = " << (args) << endl
-#define MOD 1000000007
-#define vi vector<int>
-#define fl forward_list
-#define pb push_back
-#define pf push_front
-#define read(st) getline(cin, st)
-#define FOR(i, a, b) for (int i = a; i < b; i++)
 
 int main()
 {
-    fastio;
-    int x;
-    cin >> x;
-    for (int i = 31; i >= 0; i--)
+    int n;
+    string bin = "";
+
+    cin >> n;
+
+    stack<int> restos; // Criando a pilha
+
+    // Caso a entrada seja 0, já imprimi o resultado e encerre o programa
+    if (n == 0)
     {
-        if (x & (1 << i))
-            cout << "1";
-        else
-            cout << "0";
+        cout << '0';
+        return 0;
     }
-    return 0;
+    // Percorre todas as divisões, e guarde o resto em uma pilha, até N ser igual a 0
+    while (n > 0)
+    {
+        restos.push(n % 2);
+        n = n / 2;
+    }
+
+    // Criando a string com o binário a partir da leitura da pilha
+    while (!restos.empty())
+    {
+        n = restos.top();
+        restos.pop();
+
+        (n == 1) ? bin += '1' : bin += '0';
+    }
+    cout << bin << endl;
 }

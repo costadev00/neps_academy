@@ -21,10 +21,28 @@ typedef long double ld;
 int main()
 {
     fastio;
-    int n;
-    cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    int n, m;
+    cin >> n >> m;
+    int x;
+    vi vet;
+    map<int, int> mp;
+    for (int i = 1; i <= n; i++)
+    {
+        int voltacm = 0;
+        for (int j = 0; j < m; j++)
+        {
+            cin >> x;
+            voltacm += x;
+        }
+        mp[voltacm] = i;
+    }
+    int lim = 0;
+    for (auto u : mp)
+    {
+        if (lim == 3)
+            break;
+        cout << u.second << endl;
+        lim++;
+    }
     return 0;
 }

@@ -21,10 +21,27 @@ typedef long double ld;
 int main()
 {
     fastio;
-    int n;
+    string n;
     cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    int sz = n.size();
+    int a = n[sz - 1] - 48;
+    if (a % 2 == 0)
+        cout << "S\n";
+    else
+        cout << "N\n";
+    int b = 0;
+    for (int i = 0; i < sz; i++)
+    {
+        b += (n[i] - 48);
+    }
+    if (b % 3 == 0)
+        cout << "S\n";
+
+    else
+        cout << "N\n";
+    if (n[sz - 1] == '0' || n[sz - 1] == '5')
+        cout << "S\n";
+    else
+        cout << "N\n";
     return 0;
 }

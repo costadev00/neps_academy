@@ -1,3 +1,4 @@
+//TODO: SOLVE
 #include <bits/stdc++.h>
 #define fastio                        \
     ios_base::sync_with_stdio(false); \
@@ -21,10 +22,27 @@ typedef long double ld;
 int main()
 {
     fastio;
-    int n;
-    cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    int j, a;
+    cin >> j >> a;
+    char x;
+    map<int, char> c;
+    for (int i = 1; i <= j; i++)
+    {
+        cin >> x;
+        c[i] = x;
+    }
+    int num;
+    int cont = 0;
+    for (int i = 0; i < a; i++)
+    {
+        cin >> x >> num;
+
+        if (c[num] == x)
+        {
+            cont++;
+            c[num] = '0';
+        }
+    }
+    cout << cont << endl;
     return 0;
 }

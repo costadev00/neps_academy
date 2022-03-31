@@ -21,10 +21,6 @@ typedef long double ld;
 int main()
 {
     fastio;
-    int n;
-    cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    cout << "Bolsonaro, aqui quem fala eh ela a Pfizer. Ta passada???\n";
     return 0;
 }

@@ -21,10 +21,14 @@ typedef long double ld;
 int main()
 {
     fastio;
-    int n;
-    cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    vector<int> vet;
+    int x;
+    FOR(i, 0, 3)
+    {
+        cin >> x;
+        vet.pb(x);
+    }
+    sort(vet.begin(), vet.end());
+    cout << vet[1] << endl;
     return 0;
 }

@@ -21,10 +21,11 @@ typedef long double ld;
 int main()
 {
     fastio;
-    int n;
+    double n;
     cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    if (n >= 30.0)
+        cout << "Dia lindo, dia quente, hoje e dia de sorvetinho!!!\n";
+    else
+        cout << "Ops, dia frio, sem sorvetinho!!!\n";
     return 0;
 }

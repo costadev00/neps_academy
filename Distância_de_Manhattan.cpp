@@ -21,10 +21,10 @@ typedef long double ld;
 int main()
 {
     fastio;
-    int n;
-    cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    // dAB² = (xB – xA)² + (yB – yA)².
+
+    int xa, xb, ya, yb;
+    cin >> xa >> ya >> xb >> yb;
+    cout << abs(xa - xb) + abs(ya - yb);
     return 0;
 }

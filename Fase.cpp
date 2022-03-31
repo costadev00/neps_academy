@@ -23,8 +23,28 @@ int main()
     fastio;
     int n;
     cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    int c;
+    cin >> c;
+    int x;
+    vector<int> vet;
+    while (n--)
+    {
+        cin >> x;
+        vet.pb(x);
+    }
+    sort(vet.begin(), vet.end(), greater<int>());
+    // for (auto u : vet)
+    //     cout << u << " ";
+    int res = c;
+    int i = c - 1;
+    while (true)
+    {
+        if (vet[i] == vet[i + 1])
+            res++;
+        else
+            break;
+        i++;
+    }
+    cout << res << endl;
     return 0;
 }

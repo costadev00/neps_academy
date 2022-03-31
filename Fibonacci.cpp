@@ -17,25 +17,32 @@ typedef long double ld;
 #define pf push_front
 #define read(st) getline(cin, st)
 #define FOR(i, a, b) for (int i = a; i < b; i++)
+#define N 31
 
+bool ready[N];
+ll value[N];
+
+ll fibo(ll n)
+{
+    if (ready[n]) // Primeiro passo
+        return value[n];
+
+    if (n == 1 || n == 2) // Segundo passo
+        return 1;
+
+    value[n] = fibo(n - 1) + fibo(n - 2); // Terceiro passo
+    ready[n]=true;
+    return value[n];
+}
 int main()
 {
     fastio;
-    int n;
+    ll n;
+    value[0] = 1;
+    value[1] = 1;
+    ready[0] = true;
+    ready[1] = true;
     cin >> n;
-    int vet[31];
-    vet[0] = 1;
-    vet[1] = 1;
-    for (int i = 2; i < 31; i++)
-    {
-        vet[i] = vet[i - 1] + vet[i - 2];
-        // debug(vet[i]);
-        // debug(i);
-    }
-    cout << vet[n] << endl;
-    // for (auto i : vet)
-    // cout << i << endl;
-    // cout << vet[i] << endl;
-    // cout << vet[n + 1] << endl;
+    cout << fibo(n+1);
     return 0;
 }

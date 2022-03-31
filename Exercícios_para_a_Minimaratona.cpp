@@ -23,8 +23,6 @@ int main()
     fastio;
     int n;
     cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    cout << "Total de exercicios: " << n * 13;
     return 0;
 }

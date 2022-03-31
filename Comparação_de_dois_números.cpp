@@ -21,10 +21,19 @@ typedef long double ld;
 int main()
 {
     fastio;
-    int n;
-    cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    int n1, n2;
+    cin >> n1 >> n2;
+    if (n1 > n2)
+    {
+        cout << "O maior numero e " << n1 << endl;
+        cout << "O menor numero e " << n2 << endl;
+    }
+    else if (n2 > n1)
+    {
+        cout << "O maior numero e " << n2 << endl;
+        cout << "O menor numero e " << n1 << endl;
+    }
+    else
+        cout << "Numeros iguais\n";
     return 0;
 }

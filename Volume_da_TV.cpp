@@ -22,9 +22,21 @@ int main()
 {
     fastio;
     int n;
-    cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    int x;
+    int y;
+    cin >> n >> x;
+    int soma = n;
+    int aux = soma;
+    while (x--)
+    {
+        cin >> y;
+        soma += y;
+        if (soma > 100)
+            soma = 100;
+        if (soma < 0)
+            soma = 0;
+        // debug(soma);
+    }
+    cout << soma;
     return 0;
 }

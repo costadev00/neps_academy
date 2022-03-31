@@ -22,9 +22,18 @@ int main()
 {
     fastio;
     int n;
-    cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    while (cin >> n)
+    {
+        vector<ll> vet;
+        ll x;
+        for (int i = 0; i < n; i++)
+        {
+            cin >> x;
+            vet.pb(x);
+        }
+        ll neg = vet[0] * vet[1] * vet[n - 1];
+        ll res = vet[n - 3] * vet[n - 2] * vet[n - 1];
+        cout << max(neg, res) << endl;
+    }
     return 0;
 }

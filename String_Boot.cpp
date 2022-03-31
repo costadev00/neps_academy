@@ -22,9 +22,22 @@ int main()
 {
     fastio;
     int n;
+    string nome1, nome2, s;
+    cin >> nome1 >> nome2;
     cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    cin.ignore();
+    cin >> s;
+
+    if (nome1 != "Reluew" || nome2 != "Markinhos")
+    {
+        cout << "Nao eh possivel descriptografar!\n";
+        return 0;
+    }
+    int tam = s.length();
+    for (int i = 0; i < tam; i++)
+    {
+        s[i] = s[i] + n;
+    }
+    cout << s << endl;
     return 0;
 }

@@ -23,8 +23,13 @@ int main()
     fastio;
     int n;
     cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    if (n <= 1979)
+        cout << "Geracao X!!!\n";
+    else if (n >= 1980 && n < 1995)
+        cout << "Geracao Millennials. Muito cringe!!!\n";
+    else if (n >= 1996 && n < 2010)
+        cout << "Geracao Z!!!\n";
+    else
+        cout << "Geracao Alpha!!!\n";
     return 0;
 }

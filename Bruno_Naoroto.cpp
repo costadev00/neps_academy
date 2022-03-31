@@ -22,9 +22,15 @@ int main()
 {
     fastio;
     int n;
-    cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    int soma = 0;
+    for (int i = 0; i < 5; i++)
+    {
+        cin >> n;
+        soma += n;
+    }
+    if (soma >= 40)
+        cout << "Carga de horas completa\n";
+    else
+        cout << "Carga de horas incompleta\n";
     return 0;
 }

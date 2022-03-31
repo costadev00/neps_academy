@@ -23,8 +23,16 @@ int main()
     fastio;
     int n;
     cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    vector<string> vet = {"Sobral", "Ubajara", "Tiangua"};
+    int pos = 0;
+    while (n--)
+    {
+        if(pos==3)
+            pos=0;
+        pos++;
+        // debug(n);
+        // debug(pos);
+    }
+    cout<<vet[pos-1];
     return 0;
 }

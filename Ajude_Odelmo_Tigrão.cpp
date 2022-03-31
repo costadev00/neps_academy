@@ -21,10 +21,12 @@ typedef long double ld;
 int main()
 {
     fastio;
-    int n;
-    cin >> n;
-    int dg = 26;
-    dg += n;
-    cout << n + 5 << " " << dg << endl;
+    int n, m, p;
+    cin >> n >> m >> p;
+    int popvac = (p * n) / 100;
+    if (m >= popvac)
+        cout << "UdiCity esta segura!!!\n";
+    else
+        cout << "UdiCity esta em perigo, vamos de LockDalson!!!\n";
     return 0;
 }
