@@ -21,22 +21,17 @@ typedef long double ld;
 int main()
 {
     fastio;
-    char mat[20][20];
-    for (int i = 0; i < 15; i++)
-    {
-        for (int j = 0; j < 15; j++)
-        {
-            cin >> mat[i][j];
-        }
-    }
-    int n = 1;
+    int n;
+    cin >> n;
+    double x;
+    vector<double> vet;
     for (int i = 0; i < n; i++)
     {
-        for (int j = 0; j < n; j++)
-        {
-            cout << mat[i][j] << " ";
-        }
-        cout << endl;
+        cin >> x;
+        vet.pb(x);
     }
+    double ans = vet[0] * 100;
+    double dif = vet[n - 1] * 100;
+    printf("%.2lf\n", dif - ans);
     return 0;
 }

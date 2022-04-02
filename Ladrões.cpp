@@ -21,19 +21,8 @@ typedef long double ld;
 int main()
 {
     fastio;
-    double n, m;
+    ll n, m;
     cin >> n >> m;
-    double d = 2.0;
-    double acm = m;
-    double ans = 0;
-    for (int i = 0; i < n; i++)
-    {
-        double op = 1 / d;
-        ans += acm / op;
-        acm += ans;
-        // debug(acm);
-        ++d;
-    }
-    cout << ans;
+    cout << (n + 1) * m;
     return 0;
 }

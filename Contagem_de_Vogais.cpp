@@ -21,22 +21,16 @@ typedef long double ld;
 int main()
 {
     fastio;
-    char mat[20][20];
-    for (int i = 0; i < 15; i++)
+    int n;
+    cin >> n;
+    cin.ignore();
+    int cont = 0;
+    char c;
+    while (cin >> c)
     {
-        for (int j = 0; j < 15; j++)
-        {
-            cin >> mat[i][j];
-        }
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+            cont++;
     }
-    int n = 1;
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            cout << mat[i][j] << " ";
-        }
-        cout << endl;
-    }
+    cout << cont << endl;
     return 0;
 }

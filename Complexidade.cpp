@@ -21,22 +21,14 @@ typedef long double ld;
 int main()
 {
     fastio;
-    char mat[20][20];
-    for (int i = 0; i < 15; i++)
+    int n;
+    cin >> n;
+    int ans = 0;
+    while (n >= 1000000)
     {
-        for (int j = 0; j < 15; j++)
-        {
-            cin >> mat[i][j];
-        }
+        ans++;
+        n -= 1000000;
     }
-    int n = 1;
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
-            cout << mat[i][j] << " ";
-        }
-        cout << endl;
-    }
+    cout << ans;
     return 0;
 }
