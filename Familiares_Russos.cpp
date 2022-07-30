@@ -1,3 +1,4 @@
+//TODO:SOLVE
 #include <bits/stdc++.h>
 #define fastio                        \
     ios_base::sync_with_stdio(false); \
@@ -18,23 +19,25 @@ typedef long double ld;
 #define read(st) getline(cin, st)
 #define FOR(i, a, b) for (int i = a; i < b; i++)
 
-//a function that recives a value N and prints the multiplication table of N
-void print_table(int N)
-{
-    FOR(i, 1, N + 1)
-    {
-        FOR(j, 1, N + 1)
-        {
-            cout << i * j << " ";
-        }
-        cout << endl;
-    }
-}
 int main()
 {
     fastio;
-    int N;
-    cin >> N;
-    print_table(N);
+    string nome, sobrenome, familia;
+    cin >> nome >> sobrenome >> familia;
+
+    int n;
+    cin >> n;
+    cin.ignore();
+    int p = 0, i = 0;
+    string nom, sbr, fml;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> nom >> sbr >> fml;
+        if (sbr[2] == sobrenome[2])
+            i++;
+        if (fml[2] == familia[2])
+            p++;
+    }
+    cout << p << " " << i << endl;
     return 0;
 }

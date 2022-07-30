@@ -18,23 +18,32 @@ typedef long double ld;
 #define read(st) getline(cin, st)
 #define FOR(i, a, b) for (int i = a; i < b; i++)
 
-//a function that recives a value N and prints the multiplication table of N
-void print_table(int N)
-{
-    FOR(i, 1, N + 1)
-    {
-        FOR(j, 1, N + 1)
-        {
-            cout << i * j << " ";
-        }
-        cout << endl;
-    }
-}
 int main()
 {
     fastio;
-    int N;
-    cin >> N;
-    print_table(N);
+    int n, f;
+    vi vet;
+    bool fd = false;
+
+    cin >> n;
+    int x;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> x;
+        vet.pb(x);
+    }
+    cin >> f;
+    for (int i = 0; i < n; i++)
+    {
+        if (vet[i] == f)
+        {
+            fd = true;
+            break;
+        }
+    }
+    if (fd)
+        cout << "pertence\n";
+    else
+        cout << "nao_pertence\n";
     return 0;
 }

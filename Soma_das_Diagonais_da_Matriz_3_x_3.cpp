@@ -18,23 +18,22 @@ typedef long double ld;
 #define read(st) getline(cin, st)
 #define FOR(i, a, b) for (int i = a; i < b; i++)
 
-//a function that recives a value N and prints the multiplication table of N
-void print_table(int N)
-{
-    FOR(i, 1, N + 1)
-    {
-        FOR(j, 1, N + 1)
-        {
-            cout << i * j << " ";
-        }
-        cout << endl;
-    }
-}
 int main()
 {
     fastio;
-    int N;
-    cin >> N;
-    print_table(N);
+    int mat[3][3];
+    int p = 0, s = 0;
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 3; j++)
+            cin >> mat[i][j];
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 3; j++)
+        {
+            if (i == j)
+                p += mat[i][j];
+        }
+    s = mat[0][2] + mat[1][1] + mat[2][0];
+    cout << "Diagonal principal: " << p << endl;
+    cout << "Diagonal secundaria: " << s << endl;
     return 0;
 }

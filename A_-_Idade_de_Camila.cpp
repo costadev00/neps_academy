@@ -18,23 +18,16 @@ typedef long double ld;
 #define read(st) getline(cin, st)
 #define FOR(i, a, b) for (int i = a; i < b; i++)
 
-//a function that recives a value N and prints the multiplication table of N
-void print_table(int N)
-{
-    FOR(i, 1, N + 1)
-    {
-        FOR(j, 1, N + 1)
-        {
-            cout << i * j << " ";
-        }
-        cout << endl;
-    }
-}
 int main()
 {
     fastio;
-    int N;
-    cin >> N;
-    print_table(N);
+    int n1, n2, n3;
+    cin >> n1 >> n2 >> n3;
+    if ((n1 >= n2 && n1 <= n3) || n1 <= n2 && n1 >= n3)
+        cout << n1 << endl;
+    else if ((n2 >= n1 && n2 <= n3) || (n2 <= n1 && n2 >= n3))
+        cout << n2;
+    else
+        cout << n3;
     return 0;
 }
