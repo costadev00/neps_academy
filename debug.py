@@ -1,6 +1,3 @@
-x = True
-print(x)
-print(type(x))
-x = bool(input())
+import tensorflow as tf
 
-print(type(x))
+print(tf.__version__)

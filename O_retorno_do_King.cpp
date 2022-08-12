@@ -21,15 +21,27 @@ typedef long double ld;
 int main()
 {
     fastio;
-    int m,n;
-    int a,b,c;
-    scanf("<pre>/n %d %d", &m, &n);
-    scanf("%d %d %d ",&a,&b,&c);
-    scanf("</pre>");
-    debug(m);
-    debug(n);
-    debug(a);
-    debug(b);
-    debug(c);
+    string s;
+    cin >> s;
+    double media = 0;
+    vi vet;
+    FOR(i, 0, s.size())
+    {
+
+        // media += s[i] - '0';
+        if (s[i] == '0')
+        {
+            vet.pop_back();
+            vet.push_back(10);
+            continue;
+        }
+        vet.push_back(s[i] - '0');
+    }
+    for (auto u : vet)
+    {
+        media += u;
+        // cout << u << endl;
+    }
+    cout << fixed << setprecision(2) << media / vet.size() << endl;
     return 0;
 }

@@ -21,15 +21,29 @@ typedef long double ld;
 int main()
 {
     fastio;
-    int m,n;
-    int a,b,c;
-    scanf("<pre>/n %d %d", &m, &n);
-    scanf("%d %d %d ",&a,&b,&c);
-    scanf("</pre>");
-    debug(m);
-    debug(n);
-    debug(a);
-    debug(b);
-    debug(c);
+    int j, r;
+    cin >> j >> r;
+    map<int, int> m;
+    while (r--)
+    {
+        for (int i = 1; i <= j; i++)
+        {
+            int x;
+            cin >> x;
+            m[i] += x;
+        }
+    }
+    int max = INT_MIN;
+    int person;
+    for (auto u : m)
+    {
+        // cout << u.first << " " << u.second << endl;
+        if (u.second >= max)
+        {
+            max = u.second;
+            person = u.first;
+        }
+    }
+    cout << person << endl;
     return 0;
 }
