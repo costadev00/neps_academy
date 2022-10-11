@@ -20,14 +20,29 @@ typedef long double ld;
 
 int main()
 {
-    int n;
-    cin >> n;
-    string s1, s2;
-    cin >> s1 >> s2;
-    int cont = 0;
-    for (int i = 0; i < n; i++)
-        if (s1[i] == s2[i])
+    fastio;
+    map<int, int, greater<int>> m;
+    int x;
+    int n = 5;
+    while (n--)
+    {
+        cin >> x;
+        m[x]++;
+    }
+    if (m.size() == 1)
+        cout << "5 0" << endl;
+    else if (m.size() == 5)
+        cout << "1 1" << endl;
+    else
+    {
+        int cont = 0;
+        for (auto u : m)
+        {
+            cout << u.second << " ";
             cont++;
-    cout << cont << endl;
+            if (cont == 2)
+                break;
+        }
+    }
     return 0;
 }
