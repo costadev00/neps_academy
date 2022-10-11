@@ -18,18 +18,16 @@ typedef long double ld;
 #define read(st) getline(cin, st)
 #define FOR(i, a, b) for (int i = a; i < b; i++)
 
+void altera(vector<int> *v){
+    v->push_back(10);
+}
 int main()
 {
-    fastio;
-    int m,n;
-    int a,b,c;
-    scanf("<pre>/n %d %d", &m, &n);
-    scanf("%d %d %d ",&a,&b,&c);
-    scanf("</pre>");
-    debug(m);
-    debug(n);
-    debug(a);
-    debug(b);
-    debug(c);
+  vector<int> v({1,2,3,4,5,6});
+
+    vector<int> vet(10,5);
+    altera(&vet);
+    for(auto u: vet)
+        cout<<u<<" ";
     return 0;
 }
