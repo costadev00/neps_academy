@@ -21,26 +21,13 @@ typedef long double ld;
 int main()
 {
     fastio;
-    int n, c, s;
-    cin >> n >> c >> s;
-    vector<int> vet;
-    int x;
-    int p = 1;
-    int ans;
-    s = 1 ? ans = 1 : ans = 0;
-    FOR(i, 0, c)
-    {
-        if (p == s)
-            ans++;
-        // debug(p);
-        // debug(x);
-        cin >> x;
-        p += x;
-        if (p == n + 1)
-            p = 1;
-        if (p <= 0)
-            p = n;
-    }
-    cout << ans;
+    int k, a, b;
+    cin >> k >> a >> b;
+    if (b > a)
+        swap(b, a);
+    if ((a - b) >= k)
+        cout << "EH SUFICIENTE\n";
+    else
+        cout << "NAO EH SUFICIENTE\n";
     return 0;
 }

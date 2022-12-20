@@ -21,26 +21,27 @@ typedef long double ld;
 int main()
 {
     fastio;
-    int n, c, s;
-    cin >> n >> c >> s;
-    vector<int> vet;
-    int x;
-    int p = 1;
-    int ans;
-    s = 1 ? ans = 1 : ans = 0;
-    FOR(i, 0, c)
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+    vector<char> v = {'I', 'O', 'I'};
+    // make toupper of s
+    for (int i = 0; i < n; i++)
     {
-        if (p == s)
-            ans++;
-        // debug(p);
-        // debug(x);
-        cin >> x;
-        p += x;
-        if (p == n + 1)
-            p = 1;
-        if (p <= 0)
-            p = n;
+        s[i] = toupper(s[i]);
     }
-    cout << ans;
+    int j = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (s[i] == v[j])
+            j++;
+        if (j == 3)
+        {
+            cout << "Yes" << endl;
+            return 0;
+        }
+    }
+    cout << "No" << endl;
     return 0;
 }

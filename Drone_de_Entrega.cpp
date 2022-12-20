@@ -22,14 +22,15 @@ int main()
 {
     fastio;
     int a, b, c, h, l;
-    while (cin >> a >> b >> c >> h >> l)
-    {
-        int c1 = 2 * ((a * b) + (a * c) + (b * c));
-        int c2 = h * l;
-        if (c1 <= h && c1 <= l)
-            cout << "S\n";
-        else
-            cout << "N\n";
-    }
+    cin >> a >> b >> c >> h >> l;
+    // int win  = h*l;
+    // if(a*b<=win || a*c<=win || b*c<=win)
+    //     cout << "S" << endl;
+    // else
+    //     cout << "N" << endl;
+    if((b<=l && a<=h) || (c<=l && a<=h) || (b<=h && a<=l)||(c<=h && a<=l)||(b<=l && c<=h)||(b<=h && c<=l))
+        cout << "S" << endl;
+    else
+        cout << "N" << endl;
     return 0;
 }

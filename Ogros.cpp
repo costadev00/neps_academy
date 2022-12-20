@@ -23,17 +23,26 @@ int main()
     fastio;
     int n, m;
     cin >> n >> m;
+    int x;
+    vector<pair<int, int>> inter;
     for (int i = 0; i < n - 1; i++)
     {
-        
+        cin >> x;
     }
-
+    inter.push_back(x + 1);
+    sort(inter.begin(), inter.end());
     for (int i = 0; i < n; i++)
     {
+        cin >> x;
     }
     for (int i = 0; i < m; i++)
     {
-
+        cin >> x;
+        // cout<<mp[x]<<" ";
     }
+    for (auto u : inter)
+        cout << u << " ";
+    // print mp
+
     return 0;
 }
