@@ -18,24 +18,42 @@ typedef long double ld;
 #define read(st) getline(cin, st)
 #define FOR(i, a, b) for (int i = a; i < b; i++)
 
-int fat(int n)
-{
-    if (n == 1)
-    {
-        return n;
-    }
-    return n * fat(n - 1);
-}
 int main()
 {
     fastio;
-    int n;
+    unsigned long long fat[20];
+    fat[0] = 1;
+    fat[1] = 1;
+    fat[2] = 2;
+    fat[3] = 6;
+    fat[4] = 24;
+    fat[5] = 120;
+    fat[6] = 720;
+    fat[7] = 5040;
+    fat[8] = 40320;
+    fat[9] = 362880;
+    fat[10] = 3628800;
+    fat[11] = 39916800;
+    fat[12] = 479001600;
+    fat[13] = 6227020800;
+    fat[14] = 87178291200;
+    fat[15] = 1307674368000;
+    fat[16] = 20922789888000;
+    fat[17] = 355687428096000;
+    fat[18] = 6402373705728000;
+    fat[19] = 121645100408832000;
+    fat[20] = 2432902008176640000;
+    unsigned long long n;
     cin >> n;
-    if (n == 0)
+    int ans = 0;
+    for (int i = 20; i >= 0; i--)
     {
-        cout << 1 << endl;
-        exit(0);
+        if (n >= fat[i])
+        {
+            ans += n / fat[i];
+            n %= fat[i];
+        }
     }
-    cout << fat(n) << endl;
+    cout << ans << endl;
     return 0;
 }

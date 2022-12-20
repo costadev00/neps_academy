@@ -73,7 +73,7 @@ int main()
     for (int i = 0; i < N; i++)
     {
         int a;
-        cin >> a;
+        cin >   > a;
         x.push_back(a);
     }
     // Uma funcao recursiva para evitar redundancia
