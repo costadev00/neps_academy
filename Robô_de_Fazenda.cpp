@@ -27,19 +27,24 @@ int main()
     int x;
     int p = 1;
     int ans;
-    s = 1 ? ans = 1 : ans = 0;
+    // s = 1 ? ans = 1 : ans = 0;
+    if (s == 1)
+        ans = 1;
+    else
+        ans = 0;
     FOR(i, 0, c)
     {
-        if (p == s)
-            ans++;
         // debug(p);
+        // debug(s);
         // debug(x);
         cin >> x;
         p += x;
-        if (p == n + 1)
+        if (p >= n + 1)
             p = 1;
         if (p <= 0)
             p = n;
+        if (p == s)
+            ans++;
     }
     cout << ans;
     return 0;
