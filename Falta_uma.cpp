@@ -45,6 +45,5 @@ int main()
             cout << v << " ";
         cout << endl;
     }
-    cout << endl;
     return 0;
 }
