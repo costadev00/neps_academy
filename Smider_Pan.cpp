@@ -18,34 +18,35 @@ typedef long double ld;
 #define read(st) getline(cin, st)
 #define FOR(i, a, b) for (int i = a; i < b; i++)
 
-// sieve of eratosthenes
-void sieve(int n)
+int calculateMaxJumps(const vector<int> &buildings)
 {
-    bool prime[n + 1];
-    memset(prime, true, sizeof(prime));
-    int j = 1;
-    for (int p = 2; p * p <= n; p++)
+    int n = buildings.size();
+    int maxJumps = 0;
+    int currentHeight = 0;
+    int currentIndex = 0;
+    int maxHeight = -1;
+    for (int i = 0; i < n; i++)
     {
-        if (prime[p])
-        {
-            for (int i = p * p; i <= n; i += p)
-                prime[i] = false;
-            debug(j);
-            j++;
-        }
+        maxHeight = max(buildings[i], maxHeight);
     }
+    debug(maxHeight);
+    return maxJumps;
 }
+
 int main()
 {
-    fastio;
-    sieve(10);
     int n;
     cin >> n;
 
-    while (n--)
+    vector<int> buildings(n);
+    for (int i = 0; i < n; i++)
     {
-        int x;
-        cin >> x;
+        cin >> buildings[i];
     }
+
+    int maxJumps = calculateMaxJumps(buildings);
+
+    cout << maxJumps << endl;
+
     return 0;
 }

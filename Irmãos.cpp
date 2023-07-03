@@ -21,12 +21,14 @@ typedef long double ld;
 int main()
 {
     fastio;
-    map<int, int> m;
-    m[1] = 1;
-    m[2] = 1;
-    m[3] = 1;
-    if (m[4])
-        cout << "oi";    
-    cout<<m.size();
+    // n = irmao mais novo
+    //  m = otavio
+    int n, m;
+    cin >> n >> m;
+    int dif = m - n;
+    if (dif == 0)
+        cout << m;
+    else
+        cout << m + dif;
     return 0;
 }

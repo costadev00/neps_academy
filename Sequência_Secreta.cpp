@@ -21,12 +21,20 @@ typedef long double ld;
 int main()
 {
     fastio;
-    map<int, int> m;
-    m[1] = 1;
-    m[2] = 1;
-    m[3] = 1;
-    if (m[4])
-        cout << "oi";    
-    cout<<m.size();
+    int n;
+    cin>>n;
+    vector<int> v(n);
+    FOR(i,0,n){
+        int x;
+        cin >> x;
+        v[i] = x;
+    }
+    int ans=1;
+    for(int i=1;i<n;i++){
+        if(v[i]!=v[i-1]){
+            ans++;
+        }
+    }
+    cout<<ans<<endl;
     return 0;
 }

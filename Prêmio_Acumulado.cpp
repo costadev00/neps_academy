@@ -21,12 +21,20 @@ typedef long double ld;
 int main()
 {
     fastio;
-    map<int, int> m;
-    m[1] = 1;
-    m[2] = 1;
-    m[3] = 1;
-    if (m[4])
-        cout << "oi";    
-    cout<<m.size();
+    int n, m;
+    cin >> n >> m;
+    int v[n];
+    int sum = 0;
+    FOR(i, 1, n+1)
+    {
+        cin >> v[i];
+    }
+    FOR(i,0,m){
+        int a,b;
+        cin >> a>>b;
+        for(int i=a;i<=b;i++)
+            sum+=v[i];
+    }
+    cout << sum << endl;
     return 0;
 }
