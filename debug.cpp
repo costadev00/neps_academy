@@ -17,16 +17,3 @@ typedef long double ld;
 #define pf push_front
 #define read(st) getline(cin, st)
 #define FOR(i, a, b) for (int i = a; i < b; i++)
-
-int main()
-{
-    fastio;
-    map<int, int> m;
-    m[1] = 1;
-    m[2] = 1;
-    m[3] = 1;
-    if (m[4])
-        cout << "oi";    
-    cout<<m.size();
-    return 0;
-}
