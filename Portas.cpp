@@ -9,9 +9,6 @@ typedef long long ll;
 typedef long double ld;
 
 #define endl "\n"
-#define MOD 1000000007
-#define vi vector<int>
-#define pb push_back
 #define debug(args...) cout << (#args) << " = " << (args) << endl
 #define MOD 1000000007
 #define vi vector<int>
@@ -21,36 +18,36 @@ typedef long double ld;
 #define read(st) getline(cin, st)
 #define FOR(i, a, b) for (int i = a; i < b; i++)
 
+ll vet[1000001];
 int main()
 {
     fastio;
-    int n, k, fases = 0, dist = 1;
-    cin >> n;
-    cin >> k;
-    dist = abs(n - k);
-    n += 15;
-    k += 15;
-    while (dist != 0)
+    ll n, k;
+    cin >> n >> k;
+    while (k--)
     {
-        fases++;
-        n /= 2;
-        k /= 2;
-        dist = abs(n - k);
+        ll l, r, x;
+        cin >> l >> r >> x;
+        vet[l - 1] += x;
+        vet[r] -= x;
+        // for (int i = l - 1; i < r; i++)
+        //     vet[i] += x;
     }
-    switch (fases)
+
+    ll ans, sum = 0, keep = 0;
+
+    for (int r = 0; r < n; ++r)
     {
-    case 1:
-        cout << "oitavas\n";
-        break;
-    case 2:
-        cout << "quartas\n";
-        break;
-    case 3:
-        cout << "semifinal\n";
-        break;
-    case 4:
-        cout << "final\n";
-        break;
+        keep += vet[r];
+        sum += keep;
+        if (sum > ans || r == 0)
+            ans = sum;
+        if (sum < 0)
+            sum = 0;
+
+        // ans = max(ans, sum);
+        // sum = max(sum, 0);
     }
+    cout << ans;
     return 0;
 }

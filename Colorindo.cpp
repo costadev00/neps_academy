@@ -1,4 +1,3 @@
-TODO:SOLVE
 #include <bits/stdc++.h>
 #define fastio                        \
     ios_base::sync_with_stdio(false); \
@@ -19,28 +18,50 @@ typedef long double ld;
 #define read(st) getline(cin, st)
 #define FOR(i, a, b) for (int i = a; i < b; i++)
 
-const int MAXN = 1010; // Maior tamanho de uma dimensão do tabuleiro que esperamos ler
+int n, m, x, y, k;
+int cnt = 0;
+int grid[201][201];
 
-int n, m;
-int board[MAXN][MAXN]; // board[i][j] = 1, se e somente se a célula (i,j) está quebrada
+void bfs(int i, int j)
+{
+    queue<pair<int, int>> q;
+    q.push({i, j});
+    while (!q.empty())
+    {
+        int x = q.front().first;
+        int y = q.front().second;
+        q.pop();
+        if (grid[x][y] == 1)
+            continue;
+        grid[x][y] = 1;
+        cnt++;
+        for (int dx = -1; dx <= 1; dx++)
+        {
+            for (int dy = -1; dy <= 1; dy++)
+            {
+                int nx = x + dx;
+                int ny = y + dy;
+                if (nx < 1 || nx > n || ny < 1 || ny > m)
+                    continue; // Bounds check
+                if (grid[nx][ny] == 0)
+                {
+                    q.push({nx, ny});
+                }
+            }
+        }
+    }
+}
 
 int main()
 {
-    fastio;
-    int n, m, x, y, k;
-    while (cin >> n >> m >> x >> y >> k)
+    cin >> n >> m >> x >> y >> k;
+    for (int i = 1; i <= k; i++)
     {
-        int x1, y1;
-        for (int i = 0; i < n; i++)
-            for (int j = 0; j < m; j++)
-                board[i][j] = 0;
-        for (int i = 0; i < k; i++)
-        {
-            cin >> x1 >> y1;
-            board[x1][y1] = 1;
-        }
-
+        int a, b;
+        cin >> a >> b;
+        grid[a][b] = 1;
     }
-
+    bfs(x, y);
+    cout << cnt << endl;
     return 0;
 }

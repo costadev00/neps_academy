@@ -1,2 +1,2 @@
-var a="Hello World!";
-console.log(typeof(a));
+var a = "Hello World!";
+console.log(typeof a);

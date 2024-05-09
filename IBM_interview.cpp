@@ -9,9 +9,6 @@ typedef long long ll;
 typedef long double ld;
 
 #define endl "\n"
-#define MOD 1000000007
-#define vi vector<int>
-#define pb push_back
 #define debug(args...) cout << (#args) << " = " << (args) << endl
 #define MOD 1000000007
 #define vi vector<int>
@@ -24,33 +21,36 @@ typedef long double ld;
 int main()
 {
     fastio;
-    int n, k, fases = 0, dist = 1;
+    int n;
     cin >> n;
-    cin >> k;
-    dist = abs(n - k);
-    n += 15;
-    k += 15;
-    while (dist != 0)
+    vector<int> v(n);
+    FOR(i, 0, n)
     {
-        fases++;
-        n /= 2;
-        k /= 2;
-        dist = abs(n - k);
+        cin >> v[i];
     }
-    switch (fases)
+    int n2;
+    cin >> n2;
+    vector<int> v2(n2);
+    FOR(i, 0, n2)
     {
-    case 1:
-        cout << "oitavas\n";
-        break;
-    case 2:
-        cout << "quartas\n";
-        break;
-    case 3:
-        cout << "semifinal\n";
-        break;
-    case 4:
-        cout << "final\n";
-        break;
+        cin >> v2[i];
     }
+    int maxn = max(n,n2);
+    //how many times maxequal is updated
+    int maxequal = 0;
+    int ans=0;
+    FOR(i, 0, maxn)
+    {
+       if(v[i]==v2[i])
+        {
+            if(maxequal<v[i])
+            {
+                maxequal=v[i];
+                ans++;
+            }
+        }
+    }
+    cout<<ans<<endl;
+
     return 0;
 }

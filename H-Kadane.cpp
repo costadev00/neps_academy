@@ -9,9 +9,6 @@ typedef long long ll;
 typedef long double ld;
 
 #define endl "\n"
-#define MOD 1000000007
-#define vi vector<int>
-#define pb push_back
 #define debug(args...) cout << (#args) << " = " << (args) << endl
 #define MOD 1000000007
 #define vi vector<int>
@@ -23,34 +20,23 @@ typedef long double ld;
 
 int main()
 {
-    fastio;
-    int n, k, fases = 0, dist = 1;
+    int n;
     cin >> n;
-    cin >> k;
-    dist = abs(n - k);
-    n += 15;
-    k += 15;
-    while (dist != 0)
+    ll a[n];
+    for (int i = 0; i < n; i++)
     {
-        fases++;
-        n /= 2;
-        k /= 2;
-        dist = abs(n - k);
+        cin >> a[i];
     }
-    switch (fases)
+
+    ll best = a[0];
+    ll sum = 0;
+
+    for (int k = 0; k < n; k++)
     {
-    case 1:
-        cout << "oitavas\n";
-        break;
-    case 2:
-        cout << "quartas\n";
-        break;
-    case 3:
-        cout << "semifinal\n";
-        break;
-    case 4:
-        cout << "final\n";
-        break;
+        sum = max(a[k], sum + a[k]);
+        best = max(best, sum);
     }
+
+    cout << best << endl;
     return 0;
 }
