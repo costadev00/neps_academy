@@ -1,15 +1,14 @@
-
-#include <bits/stdc++.h>
-#define fastio                        \
-    ios_base::sync_with_stdio(false); \
-    cin.tie(NULL)
+#include<bits/stdc++.h>
+#define fastio                      \
+ios_base::sync_with_stdio(false); \
+cin.tie(NULL)
 
 using namespace std;
 
 typedef long long ll;
 typedef long double ld;
 
-#define endl "\n"
+#define endl "\n" 
 #define debug(args...) cout << (#args) << " = " << (args) << endl
 #define MOD 1000000007
 #define vi vector<int>
@@ -19,13 +18,11 @@ typedef long double ld;
 #define read(st) getline(cin, st)
 #define FOR(i, a, b) for (int i = a; i < b; i++)
 
-int main()
-{
-    fastio;
-    char c = 'a';
-    //a becomes b
-    c++;
-    c++;
-    cout << c << endl;
-    return 0;
+int main() {
+fastio; 
+int a,b;
+cin >>a>>b;
+cout<<b-a;
+
+return 0;
 }

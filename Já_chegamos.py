@@ -1,0 +1,11 @@
+a,b,c,d = input().split()
+a = int(a)
+b = int(b)
+c = int(c)
+d = int(d)
+
+print(a-a,a, b+a, c+b+a, d+c+b+a)
+print(a, b-b,b, c+b, d+c+b)
+print(a+b, b, c-c, c, c+d)
+print(a+b+c, b+c, c, d-d, d)
+print(a+b+c+d, b+c+d, c+d, d, d-d)

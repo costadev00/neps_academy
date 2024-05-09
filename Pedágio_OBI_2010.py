@@ -1,0 +1,7 @@
+l,d = input().split()
+l = int(l)
+d = int(d)
+k,p = input().split()
+k = int(k)
+p = int(p)
+print(l*k + (l//d)*p)

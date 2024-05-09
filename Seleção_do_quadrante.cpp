@@ -18,34 +18,20 @@ typedef long double ld;
 #define read(st) getline(cin, st)
 #define FOR(i, a, b) for (int i = a; i < b; i++)
 
-// sieve of eratosthenes
-void sieve(int n)
-{
-    vector<int> isprime;
-
-    int j = 1;
-    for (int p = 2; p * p <= n; p++)
-    {
-        if (prime[p])
-        {
-            for (int i = p * p; i <= n; i += p)
-                prime[i] = false;
-            debug(j);
-            j++;
-        }
-    }
-}
 int main()
 {
     fastio;
-    sieve(10);
-    int n;
-    cin >> n;
-
-    while (n--)
-    {
-        int x;
-        cin >> x;
-    }
+    int a, b;
+    cin >> a >> b;
+    if (a > 0 && b > 0)
+        cout << 1;
+    else if (a < 0 && b > 0)
+        cout << 2;
+    else if (a < 0 && b < 0)
+        cout << 3;
+    else if (a > 0 && b < 0)
+        cout << 4;
+    else
+        cout << 0;
     return 0;
 }
