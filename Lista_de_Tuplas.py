@@ -1,10 +1,10 @@
 n = int(input())
-s1 = input()
-s2 = input()
 #create a list of tuple in range n
-tp = [()]
+tp = []
 
-#assign s1 and s2 to the tuple
-tp.append(tp[0]+(s1.split(),))
-tp.append(tp[1]+(s2.split(),))
+# tp.append(('neps','academy'))
+for i in range(n):
+    s = input().split()
+    # print(s)
+    tp.append((s[0], s[1]))
 print(tp)
