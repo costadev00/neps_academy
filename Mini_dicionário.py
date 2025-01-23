@@ -1,9 +1,8 @@
-# Dicionário armazenando dados anteriores dos alunos
-alunos = {"tiago": 10, "clara": 8, "davi": 6}
-
-# Criação do novo dicionário
-alunos_atualizado = {
-    chave.upper(): valor + 1 for chave, valor in alunos.items()
-}
-
-print(alunos_atualizado) # Imprime novo dicionário
+n = int(input())
+mp = {}
+for i in range(n):
+    s = input().split()
+    mp[s[0]] = s[1]
+s = input().split(" ")
+for i in s:
+    print(mp[i],end=" ")

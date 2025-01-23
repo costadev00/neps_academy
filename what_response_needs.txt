@@ -1,0 +1,14 @@
+Análise Passo a Passo:
+Explique, passo a passo, como o algoritmo de Dijkstra funciona neste código. Inclua como as distâncias são atualizadas, como a fila de prioridade é usada e o que acontece em cada iteração do loop principal.
+
+Eficiência do Algoritmo:
+Qual é a complexidade de tempo e espaço desta implementação? Como a fila de prioridade contribui para a eficiência do algoritmo?
+
+Correção:
+O algoritmo implementado está correto para encontrar o menor caminho em grafos não direcionados e ponderados? Por quê?
+
+Limitações:
+Quais são as limitações deste algoritmo? Ele funciona corretamente em grafos com pesos negativos? Explique o motivo.
+
+Possíveis Melhorias:
+Como este código poderia ser modificado para funcionar com grafos direcionados ou detectar ciclos negativos?

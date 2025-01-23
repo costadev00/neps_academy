@@ -2,3 +2,5 @@
 build/
 build.log
 /.cph
+# Node modules
+node_modules/
